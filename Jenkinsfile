@@ -1,17 +1,20 @@
-node {    
-      def app     
-      stage('Clone repository') {               
-             
-            checkout scm    
-      }     
-      stage('Build image') {         
-       
-            app = docker.build("jenkinsimage")    
-       }     
-      stage('Test image') {           
-            app.inside {            
-             
-             sh 'echo "Tests passed"'        
-            }    
+pipeline {
+    agent any
+    
+    stages {
+        stage("Build") {
+            steps {
+                sh """
+                 docker build -t jenimage .
+                """ 
+            }
         }
+        stage("run") {
+            steps {
+                sh """
+                  docker run --rm jenimage
+                """
+            }
+        }
+    } 
 }
