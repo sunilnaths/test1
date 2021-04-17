@@ -1,0 +1,6 @@
+nornir
+nornir-utils
+nornir-netmiko
+nornir-jinja2
+nornir-napalm
+pylint
