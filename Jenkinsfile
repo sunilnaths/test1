@@ -11,11 +11,10 @@ pipeline {
                 checkout scm
             }
         }
-    }
-    stage('Run Syntax Checks') {
-           steps {
-              sh 'pylint L2VNI_nornir.py'
-              sh 'pylint Create_VAR.py'
+        stage('Run Syntax Checks') {
+            steps {
+                sh 'pylint L2VNI_nornir.py'
+                sh 'pylint Create_VAR.py'
            }
         }
     } 
