@@ -16,5 +16,13 @@ pipeline {
                 """
             }
         }
+        stage("run") {
+           steps {
+               sh """
+                 python3 L2VNI_nornir.py
+               """
+          }
+       }
+        
     } 
 }
