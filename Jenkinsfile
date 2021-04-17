@@ -17,4 +17,3 @@ pipeline {
                 sh 'ansible-playbook backup_configurations.yaml --syntax-check'
             }
  }
-  
