@@ -13,10 +13,10 @@ pipeline {
         }
     }
     stage('Run Syntax Checks') {
-        steps {
-            sh 'pylint L2VNI_nornir.py'
-            sh 'pylint Create_VAR.py'
-            }
+           steps {
+              sh 'pylint L2VNI_nornir.py'
+              sh 'pylint Create_VAR.py'
+           }
         }
     } 
 }
