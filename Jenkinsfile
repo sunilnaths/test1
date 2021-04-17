@@ -16,5 +16,5 @@ pipeline {
                 sh 'ansible-playbook generate_configurations.yaml --syntax-check'
                 sh 'ansible-playbook backup_configurations.yaml --syntax-check'
             }
-        }
-    }
+ }
+  
