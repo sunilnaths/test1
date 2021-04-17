@@ -1,10 +1,6 @@
 pipeline {
-    agent {
-        docker {
-            image 'firstimage'
-            args '--user sudo'
-        }
-    }
+    agent any
+    
     stages {
         stage('Checkout and Prepare') {
             steps {
