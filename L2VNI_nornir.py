@@ -28,5 +28,5 @@ def basic_configuration(task1):
 
 
 print_title("config")
-result = nr.run(task=load_vars)
+result = nr.run(task1=load_vars)
 print_result(result)
