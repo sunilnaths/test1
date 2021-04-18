@@ -19,7 +19,7 @@ pipeline {
         stage("Test") {
            steps {
                sh """
-                 python3 L2VNI_nornir.py
+                 python3 L2VNI_nornir.py --tags leaf
                """
           }
        }
