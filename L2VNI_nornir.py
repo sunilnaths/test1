@@ -23,8 +23,7 @@ def basic_configuration(task1):
     task1.host["Var_Nornir.yaml"] = r.result
     vlan_output = task1.host["Var_Nornir.yaml"]
     vlan_send = vlan_output.splitlines()
-    task1.run(task=netmiko_send_config, name="VLAN Commands",
-              config_commands=vlan_send)
+    task1.run(task=netmiko_send_config,config_commands=vlan_send)
 
 
 print_title("config")
