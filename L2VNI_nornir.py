@@ -8,7 +8,7 @@ from user_login import user_login
 from nornir.core.filter import F
 
 nr = InitNornir(config_file="config.yaml")
-task1 = nr.filter(F(groups__contains='leaf'))
+task1 = nr.filter(F(groups__contains="leaf"))
 
 def load_vars(task1):
     data = task1.run(task=load_yaml, file='Var_Nornir.yaml')
