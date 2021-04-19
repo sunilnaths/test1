@@ -28,7 +28,7 @@ pipeline {
               sh """
                 docker image prune -f
                 docker container prune -f
-                docker rm $(docker ps --all --quiet) || true
+                'docker rm $(docker ps --all --quiet) || true'
               """
           }
        }
