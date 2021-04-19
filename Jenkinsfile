@@ -5,8 +5,7 @@ pipeline {
         stage("Build") {
             steps {
                 sh """
-                withCredentials([usernamePassword(credentialsId: 'docker-login-creds', passwordVariable: 'sunven', usernameVariable: 'sunil')])
-                 docker build -t jenimage .
+                  docker build -t jenimage .
                 """ 
             }
         }
