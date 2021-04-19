@@ -7,9 +7,6 @@ from nornir_netmiko.tasks import netmiko_send_config
 from user_login import user_login
 from nornir.core.filter import F
 
-nr = InitNornir(config_file="config.yaml")
-task1 = nr.filter(F(groups__contains="leaf"))
-
 def load_vars(task1):
     data = task1.run(task=load_yaml, file='Var_Nornir.yaml')
     task1.host["facts"] = data.result
@@ -27,5 +24,7 @@ def basic_configuration(task1):
 
 
 print_title("config")
-result = nr.run(task=load_vars)
+nr = InitNornir(config_file="config.yaml")
+task1 = nr.filter(F(groups__contains="leaf"))
+result = task1.run(task=load_vars)
 print_result(result)
