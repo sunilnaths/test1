@@ -8,7 +8,7 @@ from nornir_netmiko.tasks import netmiko_send_config
 from nornir.core.filter import F
 
 def load_vars(task1):
-    data = task1.run(task=load_yaml, file='Var_Nornir.yaml')
+    data = task1.run(task=load_yaml, file='variable.yaml')
     task1.host["facts"] = data.result
     print_result(data.result)
     basic_configuration(task1)
