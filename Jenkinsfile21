@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage("Hello") {
+	  enviroment {
+		My_Username = credentials ("admin-user")
+	  }
+            steps {
+                sh """
+                  "echo 'My Username is $My_Username_USR"
+		  "echo 'My Username is $My_Username_PSW"
+                """ 
+            }
+        }
+     }
+ }
