@@ -6,12 +6,12 @@ pipeline {
 	  enviroment {
 		My_Username = credentials ("admin-user")
 	  }
-            steps {
+          steps {
                 sh """
-                  "echo 'My Username is $My_Username_USR"
-		  "echo 'My Username is $My_Username_PSW"
+                  "echo 'My Username is $My_Username_USR'"
+		  "echo 'My Username is $My_Username_PSW'"
                 """ 
-            }
+          }
         }
-     }
- }
+    }
+}
