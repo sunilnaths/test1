@@ -7,8 +7,8 @@ pipeline {
 		My_Username = credentials ("admin-user")
 	  }
            steps {
-                sh "echo 'My Username is $My_Username_USR'"
-		sh "echo 'My Username is $My_Username_PSW'"
+                sh "echo 'username: $My_Username_USR'"
+		sh "echo 'password: $My_Username_PSW'"
             }
         }
     }
