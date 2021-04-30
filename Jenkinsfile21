@@ -11,8 +11,8 @@ pipeline {
 		sh "echo 'password: $My_Username_PSW'"
 		sh 'rm -rf build' 
 		sh 'mkdir build'
-		sh "echo 'username: $My_Username_USR' >> build/newfile.txt"
-		sh "echo 'password: $My_Username_PSW' >> build/newfile.txt"
+		sh "echo 'username: $My_Username_USR' >> build/newfile.yaml"
+		sh "echo 'password: $My_Username_PSW' >> build/newfile.yaml"
            }
         }
 	stage("Test") {
