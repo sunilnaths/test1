@@ -9,7 +9,7 @@ pipeline {
            steps {
                 sh "echo 'username: $My_Username_USR'"
 		sh "echo 'password: $My_Username_PSW'"
-		sh "echo "$My_Username_USR" > newfile.txt
+		sh "echo "$My_Username_USR" > newfile.txt"
               
 	  }
         }
