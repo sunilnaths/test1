@@ -9,9 +9,9 @@ pipeline {
            steps {
                 sh "echo 'username: $My_Username_USR'"
 		sh "echo 'password: $My_Username_PSW'"
-		sh "touch username: $My_Username_USR/default.yaml"
-		sh "touch password: $My_Username_PSW/default.yaml"
-            }
+		def data = "username: $My_Username_USR"
+                writeFile(file: 'input1.txt', text: data)
+	  }
         }
     }
 }
