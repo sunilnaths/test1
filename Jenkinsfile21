@@ -13,5 +13,11 @@ pipeline {
 		sh "echo 'username: $My_Username_USR' >> build/newfile.txt"
            }
         }
+	stage("Test") {
+	   steps {
+	      sh "grep " username" build/newfile.txt"
+	   }
+        }
+	      
     }
 }
