@@ -17,8 +17,8 @@ pipeline {
         }
 	stage("Test") {
 	   steps {
-	      sh "grep 'username' build/newfile.txt"
-	      sh "grep 'password' build/newfile.txt"
+	      sh "grep 'username' build/newfile.yaml"
+	      sh "grep 'password' build/newfile.yaml"
 	   }
         }
      }
