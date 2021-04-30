@@ -9,8 +9,8 @@ pipeline {
            steps {
                 sh "echo 'username: $My_Username_USR'"
 		sh "echo 'password: $My_Username_PSW'"
-		def data = "$My_Username_USR"
-                writeFile(file: 'input1.txt', text: data)
+		sh "echo "$My_Username_USR" > newfile.txt
+              
 	  }
         }
     }
