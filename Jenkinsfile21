@@ -12,6 +12,7 @@ pipeline {
 		sh 'rm -rf build' 
 		sh 'mkdir build'
 		sh "echo 'username: $My_Username_USR' >> build/newfile.txt"
+		sh "echo 'password: $My_Username_PSW' >> build/newfile.txt"
            }
         }
 	stage("Test") {
