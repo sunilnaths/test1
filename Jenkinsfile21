@@ -25,7 +25,7 @@ pipeline {
                echo ("submitted by: "+userInput['submitter'])
 
              }
-        }
+       
            steps {
                 sh "echo 'username: $My_Username_USR'"
 		sh "echo 'password: $My_Username_PSW'"
