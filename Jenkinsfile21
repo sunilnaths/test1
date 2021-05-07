@@ -19,8 +19,8 @@ pipeline {
                 emailext body: "Please go to console output of ${BUILD_URL} input to approve or Reject",
 		mimeType: 'text/html',
                 subject: "Build Approval Request",
-                from: "${useremail}",
-                to: "$(mailToRecipients)",
+                from: "admin@gmail.com",
+                to: "sunilnaths@gmail.com",
                 recipientProviders: [[$class: 'CulprintsRecipentProvider']
                 try {
                  userInput = input submitter: 'admin', message: 'Do you approve?'
