@@ -18,7 +18,7 @@ pipeline {
 	   steps {
                 emailext body: "Please go to console output of ${BUILD_URL} input to approve or Reject",
 		mimeType: 'text/html',
-                subject: "[Jenkins] $(jobName) Build Approval Request",
+                subject: "Build Approval Request",
                 from: "${useremail}",
                 to: "$(mailToRecipients)",
                 recipientProviders: [[$class: 'CulprintsRecipentProvider']
