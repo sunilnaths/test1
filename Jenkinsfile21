@@ -16,7 +16,7 @@ pipeline {
 		sh "echo 'password: $My_Username_PSW' >> build/newfile.yaml"
            }
 	   steps {
-                emailext body: Please go to console output of $ {BUILD_URL}input to approve or Reject,
+                emailext body: "Please go to console output of $ {BUILD_URL}input to approve or Reject",
 		mimeType: 'text/html',
                 subject: "[Jenkins] $(jobName) Build Approval Request",
                 from: "${useremail}",
