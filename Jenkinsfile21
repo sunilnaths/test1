@@ -22,8 +22,8 @@ pipeline {
                 from: "admin@gmail.com",
                 to: "sunilnaths@gmail.com",
                 recipientProviders: [[$class: 'CulprintsRecipentProvider']
-            }
-        }
+           }
+	}
 
 	stage("Test") {
 	   steps {
