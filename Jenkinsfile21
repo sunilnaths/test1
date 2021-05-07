@@ -22,10 +22,8 @@ pipeline {
                 from: "admin@gmail.com",
                 to: "sunilnaths@gmail.com",
                 recipientProviders: [[$class: 'CulprintsRecipentProvider']
-                try {
-                 userInput = input submitter: 'admin', message: 'Do you approve?'
-		 }
-           }
+                userInput = input submitter: 'admin', message: 'Do you approve?'
+	   }
         }
 
 	stage("Test") {
