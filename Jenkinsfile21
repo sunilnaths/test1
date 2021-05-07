@@ -31,5 +31,5 @@ pipeline {
 	      sh "grep 'password' build/newfile.yaml"
 	   }
         }
-     }
+    }
 }
