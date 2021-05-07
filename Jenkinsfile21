@@ -15,7 +15,19 @@ pipeline {
 		sh "echo 'username: $My_Username_USR' >> build/newfile.yaml"
 		sh "echo 'password: $My_Username_PSW' >> build/newfile.yaml"
            }
-	}
+	   steps {
+                emailext body: ***
+		  Please go to console output of $ {BUILD_URL}input to approve or Reject. <br>
+		***, 
+		mimeType: 'text/html',
+               subject: "[Jenkins] $(jobName) Build Approval Request",
+               from: "${useremail}",
+               to: "$(mailToRecipients)",
+               recipientProviders: [[$class: 'CulprintsRecipentProvider']
+               try {
+                 userInput = input submitter: 'admin', message: 'Do you approve?'
+           }
+        }
 
 	stage("Test") {
 	   steps {
