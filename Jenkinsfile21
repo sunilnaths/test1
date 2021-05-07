@@ -24,7 +24,6 @@ pipeline {
                 recipientProviders: [[$class: 'CulprintsRecipentProvider']
            }
 	}
-
 	stage("Test") {
 	   steps {
 	      sh "grep 'username' build/newfile.yaml"
