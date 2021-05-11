@@ -23,7 +23,8 @@ pipeline {
           emailext body: '<a href="${BUILD_URL}input">click to approve</a>',
           mimeType: 'text/html',
           subject: 'Build Approval Request',
-          to: 'sunilnaths@gmail.com'
+          to: 'sunilnaths@gmail.com',
+          from:'sunilnaths@gmail.com'
        }
     }
       stage("mail") {
