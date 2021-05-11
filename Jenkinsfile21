@@ -2,33 +2,38 @@ pipeline {
   agent any
 
   stages {
-    stage("Hello") {
-      environment {
-        My_Username = credentials("admin-user")
-      }
+      stage("Hello") {
+          environment {
+              My_Username = credentials("admin-user")
+              
+          }
 
-      steps {
-        sh "echo 'username: $My_Username_USR'"
-        sh "echo 'password: $My_Username_PSW'"
-        sh 'rm -rf build'
-        sh 'mkdir build'
-        sh "echo 'username: $My_Username_USR' >> build/newfile.yaml"
-        sh "echo 'password: $My_Username_PSW' >> build/newfile.yaml"
-      }
-      steps {
-        emailext body: "Please go to console output of ${BUILD_URL} input to approve or Reject",
-          mimeType: 'text/html',
-          subject: "Build Approval Request",
-          from: "admin@gmail.com",
-          to: "sunilnaths@gmail.com",
-          recipientProviders: [$class: 'CulprintsRecipentProvider']
-      }
+        steps {
+            sh "echo 'username: $My_Username_USR'"
+            sh "echo 'password: $My_Username_PSW'"
+            sh 'rm -rf build'
+            sh 'mkdir build'
+            sh "echo 'username: $My_Username_USR' >> build/newfile.yaml"
+            sh "echo 'password: $My_Username_PSW' >> build/newfile.yaml"
+            
+        }
+        steps {
+            emailext body: "Please go to console output of ${BUILD_URL}              input to approve or Reject",
+            mimeType: 'text/html',
+            subject: "Build Approval Request",
+            from: "admin@gmail.com",
+            to: "sunilnaths@gmail.com",
+            recipientProviders: [$class: 'CulprintsRecipentProvider']
+            
+        }
     }
-    stage("Test") {
-      steps {
-        sh "grep 'username' build/newfile.yaml"
-        sh "grep 'password' build/newfile.yaml"
+      stage("Test") {
+          steps {
+          sh "grep 'username' build/newfile.yaml"
+          sh "grep 'password' build/newfile.yaml"
+              
+          }
+          
       }
-    }
   }
 }
