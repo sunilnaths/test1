@@ -20,11 +20,11 @@ pipeline {
     }
       stage("Test") {
           steps {
-          emailext body: '<a href="${BUILD_URL}input">click to approve</a>',
-          mimeType: 'text/html',
-          subject: 'Build Approval Request',
-          to: 'sunilnaths@gmail.com',
-          from:'sunilnaths@gmail.com'
+          emailext (
+            subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+            body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+            <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+            recipientProviders: [[$class: 'DevelopersRecipientProvider']]
        }
     }
       stage("mail") {
