@@ -20,6 +20,14 @@ pipeline {
     }
       stage("Test") {
           steps {
+          emailext body: '<a href="${BUILD_URL}input">click to approve</a>',
+          mimeType: 'text/html',
+          subject: 'Build Approval Request',
+          to: 'sunilnaths@gmail.com'
+       }
+    }
+      stage("Test") {
+          steps {
           sh "grep 'username' build/newfile.yaml"
           sh "grep 'password' build/newfile.yaml"
               
