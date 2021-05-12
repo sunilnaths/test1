@@ -11,11 +11,15 @@ pipeline {
     post {
         always {
             emailext(
-                subject: "Build ${env.JOB_NAME} - ${currentBuild.displayName} ${currentBuild.result}",
-                body: """Build ${currentBuild.result}
-                    ${env.JOB_URL}
-                    """,
-                to: 'sunilnaths@gmail.com'
+                mimeType: 'text/html',
+                replyTo: '$DEFAULT_REPLYTO',
+                subject: subject,
+                from: 'sunilnaths@gmail.com',
+                to: 'sunilnaths@gmail.com',
+                body: '${SCRIPT,template="email.template"}',
+                attachLog: true,
+                compressLog: true,
+                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
             );
         }
     }
