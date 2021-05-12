@@ -12,7 +12,7 @@ pipeline {
         always {
             emailext (
                 to: 'sunilnaths@gmail.com',
-                from: 'sunilnaths@gmail.com'
+                from: 'sunilnaths@gmail.com',
                 replyTo: 'sunilnaths@gmail.com',
                 subject: 'Test',
                 body: '$DEFAULT_CONTENT',
