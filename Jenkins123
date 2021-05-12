@@ -10,10 +10,12 @@ pipeline {
     }
     post {
         always {
-            emailext body: 'A Test EMail',
-            recipientProviders: [[$class: 'DevelopersRecipientProvider'],
-            [$class: 'RequesterRecipientProvider']],
-            subject: 'Test'
+            emailext (
+            to: 'sunilnaths@gmail.com'
+            replyTo: 'sunilnaths@gmail.com',
+            subject: 'Test',
+            body: '$DEFAULT_CONTENT',
+            mimeType: 'text/html
         }
     }
 }
