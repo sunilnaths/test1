@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    def subject = "JENKINS-NOTIFICATION: ${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'" 
+     
     stages {
         stage('Ok') {
             steps {
@@ -11,6 +11,7 @@ pipeline {
     post {
         always {
             emailext(
+                def subject = "JENKINS-NOTIFICATION: ${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
                 mimeType: 'text/html',
                 replyTo: '$DEFAULT_REPLYTO',
                 subject: subject,
