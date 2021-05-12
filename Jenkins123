@@ -15,7 +15,7 @@ pipeline {
                 body: """Build ${currentBuild.result}
                     ${env.JOB_URL}
                     """,
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+                to: 'sunilnaths@gmail.com'
             );
         }
     }
