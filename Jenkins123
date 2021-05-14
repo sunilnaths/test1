@@ -11,16 +11,8 @@ pipeline {
     post {
         always {
             emailext(
-                def subject = "JENKINS-NOTIFICATION: ${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-                mimeType: 'text/html',
-                replyTo: '$DEFAULT_REPLYTO',
-                subject: subject,
-                from: 'sunilnaths@gmail.com',
-                to: 'sunilnaths@gmail.com',
-                body: '${SCRIPT,template="email.template"}',
-                attachLog: true,
-                compressLog: true,
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+                body: 'Test email',
+                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']]
             );
         }
     }
