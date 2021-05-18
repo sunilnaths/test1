@@ -29,7 +29,7 @@ pipeline {
 
         stage('') {
           steps {
-            emailext(subject: 'Test', body: 'Testmail', from: 'sunilnaths@gmail.com', replyTo: 'sunilnaths@gmail.com', to: 'sunilnaths@gmail.com')
+            emailext(subject: 'Test', body: 'Testmail', from: 'xyz@gmail.com', replyTo: 'xyz@gmail.com', to: 'xyz@gmail.com')
           }
         }
 
